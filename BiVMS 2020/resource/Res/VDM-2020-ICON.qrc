@@ -1,0 +1,52 @@
+<RCC>
+  <qresource prefix="Camera">
+    <file>相机区/相机 (10).png</file>
+    <file>相机区/相机 (11).png</file>
+    <file>相机区/图像 (1).png</file>
+    <file>相机区/图像 (2).png</file>
+    <file>相机区/相机 (3).png</file>
+    <file>相机区/相机 (4).png</file>
+  </qresource>
+  <qresource prefix="Main">
+    <file>主界面/热力图 (2).png</file>
+    <file>主界面/曲线图@1x (1).png</file>
+    <file>主界面/曲线图@1x.png</file>
+    <file>主界面/热力图 (1).png</file>
+    <file>主界面/热力图.png</file>
+    <file>主界面/实时曲线 (1).png</file>
+    <file>主界面/实时曲线.png</file>
+    <file>主界面/三维 (1).png</file>
+    <file>主界面/三维.png</file>
+    <file>主界面/live (1).png</file>
+    <file>主界面/live.png</file>
+    <file>主界面/打开文件 (1).png</file>
+    <file>主界面/打开文件.png</file>
+    <file>主界面/分析 (1).png</file>
+    <file>主界面/分析 (2).png</file>
+    <file>主界面/区域 (2).png</file>
+    <file>主界面/区域 (3).png</file>
+    <file>主界面/新建文件夹 (1).png</file>
+    <file>主界面/新建文件夹.png</file>
+  </qresource>
+  <qresource prefix="Compute">
+    <file>计算区/开始 (4).png</file>
+    <file>计算区/停止 (2).png</file>
+    <file>计算区/暂停 停止.png</file>
+    <file>计算区/开始 (2).png</file>
+    <file>计算区/开始 (3).png</file>
+    <file>计算区/暂停.png</file>
+  </qresource>
+  <qresource prefix="Opration">
+    <file>操作区/icon_数值归一化 (1).png</file>
+    <file>操作区/icon_数值归一化.png</file>
+    <file>操作区/直方图 (1).png</file>
+    <file>操作区/直方图 (2).png</file>
+    <file>操作区/直方图 (3).png</file>
+  </qresource>
+  <qresource prefix="Draw">
+    <file>绘制区/点 (2).png</file>
+    <file>绘制区/矩形 (4).png</file>
+    <file>绘制区/任意形状 (1).png</file>
+    <file>绘制区/圆形 (2).png</file>
+  </qresource>
+</RCC>

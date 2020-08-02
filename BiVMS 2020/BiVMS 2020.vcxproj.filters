@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{b85a17e3-e1f3-4101-b9b6-c51baf54c8cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Header Files\Widget">
+      <UniqueIdentifier>{99e881b8-c758-410f-a641-7b733c75f27d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dialog">
+      <UniqueIdentifier>{8299f822-a202-4d8b-9763-ad70e4e361c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{d6d8ea6f-6ef6-43e4-99b1-db7cea733673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ToolBar">
+      <UniqueIdentifier>{6c1ac3ae-3aef-4b38-afe4-009d41a1d2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MainWnd">
+      <UniqueIdentifier>{6737bc28-f6ee-4f6f-9850-27f553a81574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files\Dialog">
+      <UniqueIdentifier>{c06150fc-0867-4567-93a8-a3602d8a5ae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\Menu">
+      <UniqueIdentifier>{89155d17-a425-43d3-a6bb-3fa67dda4813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\ToolBar">
+      <UniqueIdentifier>{94a2373f-dbb1-41f2-8d71-6471f210dc72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\Widget">
+      <UniqueIdentifier>{68bc641e-9d57-47c9-8303-a0036eb2401a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\MainWnd">
+      <UniqueIdentifier>{fdaa8d57-9041-43a2-a95b-2861a548001a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files\Dialog">
+      <UniqueIdentifier>{f7f92c16-da4a-4e0e-9891-93f7eb726701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu">
+      <UniqueIdentifier>{eb5e33d5-551c-4818-8811-94efe6f399a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ToolBar">
+      <UniqueIdentifier>{4f4051f0-0c33-495c-94e4-697b5f183192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Widget">
+      <UniqueIdentifier>{77752ae5-fd43-4142-9d9d-463a3f6cc909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MainWnd">
+      <UniqueIdentifier>{8c6fd6d7-7f3b-4967-9a4a-dada2f7069dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Genetated Files">
+      <UniqueIdentifier>{739f1832-32bd-408c-9fa4-1f7b6333c140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Others">
+      <UniqueIdentifier>{8bd9beaa-3ad5-467a-896a-94821b33f858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Others">
+      <UniqueIdentifier>{65f10d52-54b0-413e-aaeb-eb8911d51ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{da62cf62-b60a-446a-9765-dd32e245200d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\3rdparty">
+      <UniqueIdentifier>{9a119997-e071-45d2-b8ab-43cc6d8a6d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\operations">
+      <UniqueIdentifier>{3ca4c20c-496b-43e7-9989-0958ba8b27d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\primitives">
+      <UniqueIdentifier>{6a95b8ba-bf30-4802-99a2-2f32a69822c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\utils">
+      <UniqueIdentifier>{979b29a9-bc76-442f-981e-4f6d1736d21a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{8918becd-6810-435b-81e1-7c7bee308a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\operations">
+      <UniqueIdentifier>{cb1a48bc-8c9c-419c-a3e6-e75995e8258f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\primitives">
+      <UniqueIdentifier>{af09c82c-a399-4e49-a544-6458cf8952fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\utils">
+      <UniqueIdentifier>{8621bec1-8ff2-4a49-95d0-740399e8226d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BiVMS2020.cpp">
+      <Filter>Source Files\MainWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StartDlg.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Communication.cpp">
+      <Filter>Source Files\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MyMessage.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RealTimeMenuBar.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RealTime3DWidget.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\editablegraphicsscene.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\handcursorevents.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\mouse_tracking.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\nodeitem.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\regionitem.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\roidynamiclabel.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\seeditem.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\shape_clipping_base.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\utils\wheelscalablegraphicsscene.cpp">
+      <Filter>Source Files\Graphics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\primitives\ellips.cpp">
+      <Filter>Source Files\Graphics\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\primitives\polygon.cpp">
+      <Filter>Source Files\Graphics\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\primitives\rect.cpp">
+      <Filter>Source Files\Graphics\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\primitives\shape.cpp">
+      <Filter>Source Files\Graphics\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\operations\ellipsclipper.cpp">
+      <Filter>Source Files\Graphics\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\operations\polygonclipper.cpp">
+      <Filter>Source Files\Graphics\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\operations\polygonclipper2.cpp">
+      <Filter>Source Files\Graphics\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\operations\polygonmerger.cpp">
+      <Filter>Source Files\Graphics\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\operations\rectclipper.cpp">
+      <Filter>Source Files\Graphics\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\src\operations\shapedeleter.cpp">
+      <Filter>Source Files\Graphics\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scalablegraphicsview.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomPlot\qcustomplot.cpp">
+      <Filter>Source Files\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DrawingDock.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DrawWidget.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\POIPlugin.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RealTime3DToolBar.cpp">
+      <Filter>Source Files\ToolBar</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ShowWidget.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\FlagPlugin.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\History.cpp">
+      <Filter>Source Files\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StartPageWidget.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\NewProjectDlg.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ProjectInfoDlg.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MyPushButton.cpp">
+      <Filter>Source Files\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Project.cpp">
+      <Filter>Source Files\Others</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RecentPlugin.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CommunicationDlg.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\BiVMS2020.h">
+      <Filter>Header Files\MainWnd</Filter>
+    </QtMoc>
+    <QtMoc Include="include\StartDlg.h">
+      <Filter>Header Files\Dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Communication.h">
+      <Filter>Header Files\Others</Filter>
+    </QtMoc>
+    <QtMoc Include="include\MyMessage.h">
+      <Filter>Header Files\Dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="include\RealTimeMenuBar.h">
+      <Filter>Header Files\Menu</Filter>
+    </QtMoc>
+    <QtMoc Include="include\RealTime3DWidget.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="Graphics\include\utils\editablegraphicsscene.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="Graphics\include\utils\wheelscalablegraphicsscene.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="include\scalablegraphicsview.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="CustomPlot\qcustomplot.h">
+      <Filter>Header Files\Others</Filter>
+    </QtMoc>
+    <QtMoc Include="include\DrawingDock.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\DrawWidget.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\POIPlugin.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\RealTime3DToolBar.h">
+      <Filter>Header Files\ToolBar</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ShowWidget.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\FlagPlugin.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\History.h">
+      <Filter>Header Files\Others</Filter>
+    </QtMoc>
+    <QtMoc Include="include\StartPageWidget.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\NewProjectDlg.h">
+      <Filter>Header Files\Dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ProjectInfoDlg.h">
+      <Filter>Header Files\Dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Project.h">
+      <Filter>Header Files\Others</Filter>
+    </QtMoc>
+    <QtMoc Include="include\RecentPlugin.h">
+      <Filter>Header Files\Widget</Filter>
+    </QtMoc>
+    <QtMoc Include="include\MyPushButton.h">
+      <Filter>Header Files\Others</Filter>
+    </QtMoc>
+    <QtMoc Include="include\CommunicationDlg.h">
+      <Filter>Header Files\Dialog</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resource\BiVMS2020.qrc">
+      <Filter>Resource</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\BiVMS2020.ui">
+      <Filter>Form Files\MainWnd</Filter>
+    </QtUic>
+    <QtUic Include="forms\StartDlg.ui">
+      <Filter>Form Files\Dialog</Filter>
+    </QtUic>
+    <QtUic Include="forms\MyMessage.ui">
+      <Filter>Form Files\Dialog</Filter>
+    </QtUic>
+    <QtUic Include="forms\RealTimeMenuBar.ui">
+      <Filter>Form Files\Menu</Filter>
+    </QtUic>
+    <QtUic Include="forms\RealTime3DWidget.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\scalablegraphicsview.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\DrawingDock.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\DrawWidget.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\POIPlugin.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\RealTime3DToolBar.ui">
+      <Filter>Form Files\ToolBar</Filter>
+    </QtUic>
+    <QtUic Include="forms\ShowWidget.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\FlagPlugin.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\StartPageWidget.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\NewProjectDlg.ui">
+      <Filter>Form Files\Dialog</Filter>
+    </QtUic>
+    <QtUic Include="forms\RecentPlugin.ui">
+      <Filter>Form Files\Widget</Filter>
+    </QtUic>
+    <QtUic Include="forms\ProjectInfoDlg.ui">
+      <Filter>Form Files\Dialog</Filter>
+    </QtUic>
+    <QtUic Include="forms\CommunicationDlg.ui">
+      <Filter>Form Files\Dialog</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\DEFINE.h">
+      <Filter>Header Files\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\3rdparty\FastDelegate.h">
+      <Filter>Header Files\Graphics\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\3rdparty\FastDelegateBind.h">
+      <Filter>Header Files\Graphics\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\handcursorevents.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\MouseTrackCommand.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\mousetracker.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\nodeitem.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\property.hpp">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\regionitem.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\roidynamiclabel.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\seeditem.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\shape_item.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\shapeevents.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\utils\types.h">
+      <Filter>Header Files\Graphics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\primitives\ellips.h">
+      <Filter>Header Files\Graphics\primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\primitives\polygon.h">
+      <Filter>Header Files\Graphics\primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\primitives\rect.h">
+      <Filter>Header Files\Graphics\primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\primitives\shape.h">
+      <Filter>Header Files\Graphics\primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\ellipsclipper.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\polygonclipper.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\polygonclipper2.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\polygonmerger.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\rectclipper.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\shapeclippingevents.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\include\operations\shapedeleter.h">
+      <Filter>Header Files\Graphics\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_BiVMS2020.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_DrawingDock.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_DrawWidget.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_MyMessage.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_RealTime3DWidget.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_RealTimeMenuBar.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_scalablegraphicsview.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_StartDlg.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_POIPlugin.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_RealTime3DToolBar.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_ShowWidget.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_FlagPlugin.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_CommunicationDlg.h">
+      <Filter>Genetated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

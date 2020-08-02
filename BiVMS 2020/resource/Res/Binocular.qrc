@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="toolBar">
+    <file>眼镜.png</file>
+    <file>数字1-01.png</file>
+    <file>数字2-01.png</file>
+  </qresource>
+</RCC>

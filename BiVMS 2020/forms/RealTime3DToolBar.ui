@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RealTime3DToolBar</class>
+ <widget class="QToolBar" name="RealTime3DToolBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>468</width>
+    <height>40</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RealTime3DToolBar</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>30</width>
+    <height>30</height>
+   </size>
+  </property>
+  <action name="actionOpenCamera">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/相机 (10).png</normaloff>:/test/BiVMS/相机 (10).png</iconset>
+   </property>
+   <property name="text">
+    <string>OpenCamera</string>
+   </property>
+  </action>
+  <action name="actionCloseCamera">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/相机 (11).png</normaloff>:/test/BiVMS/相机 (11).png</iconset>
+   </property>
+   <property name="text">
+    <string>CloseCamera</string>
+   </property>
+  </action>
+  <action name="actionAddPoint">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/添加点_fill.png</normaloff>:/test/BiVMS/添加点_fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>AddPoint</string>
+   </property>
+  </action>
+  <action name="actionDeletePoint">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/delete (1).png</normaloff>:/test/BiVMS/delete (1).png</iconset>
+   </property>
+   <property name="text">
+    <string>DeletePoint</string>
+   </property>
+  </action>
+  <action name="actionClearPoint">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/Clear-1.png</normaloff>:/test/BiVMS/Clear-1.png</iconset>
+   </property>
+   <property name="text">
+    <string>ClearPoint</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionStartCompute">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/开始 (4).png</normaloff>:/test/BiVMS/开始 (4).png</iconset>
+   </property>
+   <property name="text">
+    <string>StartCompute</string>
+   </property>
+  </action>
+  <action name="actionFinishCompute">
+   <property name="icon">
+    <iconset resource="../resource/BiVMS2020.qrc">
+     <normaloff>:/test/BiVMS/停止 (2).png</normaloff>:/test/BiVMS/停止 (2).png</iconset>
+   </property>
+   <property name="text">
+    <string>FinishCompute</string>
+   </property>
+  </action>
+  <addaction name="actionOpenCamera"/>
+  <addaction name="actionCloseCamera"/>
+  <addaction name="actionAddPoint"/>
+  <addaction name="actionDeletePoint"/>
+  <addaction name="actionClearPoint"/>
+  <addaction name="actionStartCompute"/>
+  <addaction name="actionFinishCompute"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../resource/BiVMS2020.qrc"/>
+ </resources>
+ <connections/>
+</ui>

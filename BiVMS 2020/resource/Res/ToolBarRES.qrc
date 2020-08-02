@@ -1,0 +1,36 @@
+<RCC>
+  <qresource prefix="toolBar">
+    <file>图形.png</file>
+    <file>圆 (1).png</file>
+    <file>眼镜 (1).png</file>
+    <file>眼镜.png</file>
+    <file>分析.png</file>
+    <file>面.png</file>
+    <file>更新.png</file>
+    <file>正方形.png</file>
+    <file>new_project.png</file>
+    <file>open_project.png</file>
+    <file>提取.png</file>
+    <file>starry.jpg</file>
+    <file>魔方1.png</file>
+    <file>图像.png</file>
+    <file>直方图.png</file>
+    <file>辐射.png</file>
+    <file>提示.png</file>
+    <file>开始 (1).png</file>
+    <file>停止 (1).png</file>
+    <file>可视化.png</file>
+    <file>delete (1).png</file>
+    <file>添加点_fill.png</file>
+    <file>计算 (1).png</file>
+    <file>一键采图.png</file>
+    <file>机器人.png</file>
+    <file>相机.png</file>
+    <file>相机 (1).png</file>
+    <file>laji.png</file>
+    <file>对比 vs2.png</file>
+    <file>计算.png</file>
+    <file>视频.png</file>
+    <file>Clear-1.png</file>
+  </qresource>
+</RCC>

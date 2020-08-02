@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScalableGraphicsView</class>
+ <widget class="QGraphicsView" name="ScalableGraphicsView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Scalable Graphics View</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Resources/logos/mainwndlogo.png</normaloff>Resources/logos/mainwndlogo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(4, 47, 63);</string>
+  </property>
+  <property name="verticalScrollBarPolicy">
+   <enum>Qt::ScrollBarAlwaysOff</enum>
+  </property>
+  <property name="horizontalScrollBarPolicy">
+   <enum>Qt::ScrollBarAlwaysOff</enum>
+  </property>
+  <property name="backgroundBrush">
+   <brush brushstyle="NoBrush">
+    <color alpha="255">
+     <red>0</red>
+     <green>48</green>
+     <blue>71</blue>
+    </color>
+   </brush>
+  </property>
+  <property name="dragMode">
+   <enum>QGraphicsView::ScrollHandDrag</enum>
+  </property>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

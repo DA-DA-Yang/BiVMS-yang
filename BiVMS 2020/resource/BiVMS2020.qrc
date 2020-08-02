@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="/test">
+    <file>BiVMS/辐射.png</file>
+    <file>BiVMS/Clear-1.png</file>
+    <file>BiVMS/delete (1).png</file>
+    <file>BiVMS/添加点_fill.png</file>
+    <file>BiVMS/analysis.png</file>
+    <file>BiVMS/calibration.png</file>
+    <file>BiVMS/live.png</file>
+    <file>BiVMS/realtime.png</file>
+    <file>BiVMS/shu_library.png</file>
+    <file>BiVMS/shu_logo.png</file>
+    <file>BiVMS/shujuzhuanxian.png</file>
+    <file>BiVMS/welcome.png</file>
+    <file>BiVMS/分析 (2).png</file>
+    <file>BiVMS/开始 (4).png</file>
+    <file>BiVMS/魔方1.png</file>
+    <file>BiVMS/实时曲线 (1).png</file>
+    <file>BiVMS/提取.png</file>
+    <file>BiVMS/停止 (2).png</file>
+    <file>BiVMS/图像.png</file>
+    <file>BiVMS/相机 (10).png</file>
+    <file>BiVMS/相机 (11).png</file>
+  </qresource>
+</RCC>

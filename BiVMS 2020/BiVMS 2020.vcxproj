@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CustomPlot\qcustomplot.cpp" />
+    <ClCompile Include="Graphics\src\operations\ellipsclipper.cpp" />
+    <ClCompile Include="Graphics\src\operations\polygonclipper.cpp" />
+    <ClCompile Include="Graphics\src\operations\polygonclipper2.cpp" />
+    <ClCompile Include="Graphics\src\operations\polygonmerger.cpp" />
+    <ClCompile Include="Graphics\src\operations\rectclipper.cpp" />
+    <ClCompile Include="Graphics\src\operations\shapedeleter.cpp" />
+    <ClCompile Include="Graphics\src\primitives\ellips.cpp" />
+    <ClCompile Include="Graphics\src\primitives\polygon.cpp" />
+    <ClCompile Include="Graphics\src\primitives\rect.cpp" />
+    <ClCompile Include="Graphics\src\primitives\shape.cpp" />
+    <ClCompile Include="Graphics\src\utils\editablegraphicsscene.cpp" />
+    <ClCompile Include="Graphics\src\utils\handcursorevents.cpp" />
+    <ClCompile Include="Graphics\src\utils\mouse_tracking.cpp" />
+    <ClCompile Include="Graphics\src\utils\nodeitem.cpp" />
+    <ClCompile Include="Graphics\src\utils\regionitem.cpp" />
+    <ClCompile Include="Graphics\src\utils\roidynamiclabel.cpp" />
+    <ClCompile Include="Graphics\src\utils\seeditem.cpp" />
+    <ClCompile Include="Graphics\src\utils\shape_clipping_base.cpp" />
+    <ClCompile Include="Graphics\src\utils\wheelscalablegraphicsscene.cpp" />
+    <ClCompile Include="source\BiVMS2020.cpp" />
+    <ClCompile Include="source\Communication.cpp" />
+    <ClCompile Include="source\CommunicationDlg.cpp" />
+    <ClCompile Include="source\DrawingDock.cpp" />
+    <ClCompile Include="source\DrawWidget.cpp" />
+    <ClCompile Include="source\FlagPlugin.cpp" />
+    <ClCompile Include="source\History.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\MyMessage.cpp" />
+    <ClCompile Include="source\MyPushButton.cpp" />
+    <ClCompile Include="source\NewProjectDlg.cpp" />
+    <ClCompile Include="source\POIPlugin.cpp" />
+    <ClCompile Include="source\Project.cpp" />
+    <ClCompile Include="source\ProjectInfoDlg.cpp" />
+    <ClCompile Include="source\RealTime3DToolBar.cpp" />
+    <ClCompile Include="source\RealTime3DWidget.cpp" />
+    <ClCompile Include="source\RealTimeMenuBar.cpp" />
+    <ClCompile Include="source\RecentPlugin.cpp" />
+    <ClCompile Include="source\scalablegraphicsview.cpp" />
+    <ClCompile Include="source\ShowWidget.cpp" />
+    <ClCompile Include="source\StartDlg.cpp" />
+    <ClCompile Include="source\StartPageWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\BiVMS2020.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resource\BiVMS2020.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\BiVMS2020.ui" />
+    <QtUic Include="forms\CommunicationDlg.ui" />
+    <QtUic Include="forms\DrawingDock.ui" />
+    <QtUic Include="forms\DrawWidget.ui" />
+    <QtUic Include="forms\FlagPlugin.ui" />
+    <QtUic Include="forms\MyMessage.ui" />
+    <QtUic Include="forms\NewProjectDlg.ui" />
+    <QtUic Include="forms\POIPlugin.ui" />
+    <QtUic Include="forms\ProjectInfoDlg.ui" />
+    <QtUic Include="forms\RealTime3DToolBar.ui" />
+    <QtUic Include="forms\RealTime3DWidget.ui" />
+    <QtUic Include="forms\RealTimeMenuBar.ui" />
+    <QtUic Include="forms\RecentPlugin.ui" />
+    <QtUic Include="forms\scalablegraphicsview.ui" />
+    <QtUic Include="forms\ShowWidget.ui" />
+    <QtUic Include="forms\StartDlg.ui" />
+    <QtUic Include="forms\StartPageWidget.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\StartDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\POIPlugin.h" />
+    <QtMoc Include="include\RealTime3DToolBar.h" />
+    <QtMoc Include="include\FlagPlugin.h" />
+    <QtMoc Include="include\History.h" />
+    <QtMoc Include="include\StartPageWidget.h" />
+    <QtMoc Include="include\NewProjectDlg.h" />
+    <QtMoc Include="include\ProjectInfoDlg.h" />
+    <QtMoc Include="include\Project.h" />
+    <QtMoc Include="include\RecentPlugin.h" />
+    <QtMoc Include="include\MyPushButton.h" />
+    <QtMoc Include="include\CommunicationDlg.h" />
+    <ClInclude Include="x64\Debug\uic\ui_BiVMS2020.h" />
+    <ClInclude Include="x64\Debug\uic\ui_CommunicationDlg.h" />
+    <ClInclude Include="x64\Debug\uic\ui_DrawingDock.h" />
+    <ClInclude Include="x64\Debug\uic\ui_DrawWidget.h" />
+    <ClInclude Include="x64\Debug\uic\ui_FlagPlugin.h" />
+    <ClInclude Include="x64\Debug\uic\ui_MyMessage.h" />
+    <ClInclude Include="x64\Debug\uic\ui_POIPlugin.h" />
+    <ClInclude Include="x64\Debug\uic\ui_RealTime3DToolBar.h" />
+    <ClInclude Include="x64\Debug\uic\ui_RealTime3DWidget.h" />
+    <ClInclude Include="x64\Debug\uic\ui_RealTimeMenuBar.h" />
+    <ClInclude Include="x64\Debug\uic\ui_scalablegraphicsview.h" />
+    <ClInclude Include="x64\Debug\uic\ui_ShowWidget.h" />
+    <ClInclude Include="x64\Debug\uic\ui_StartDlg.h" />
+    <QtMoc Include="include\RealTimeMenuBar.h" />
+    <QtMoc Include="CustomPlot\qcustomplot.h" />
+    <ClInclude Include="Graphics\include\3rdparty\FastDelegate.h" />
+    <ClInclude Include="Graphics\include\3rdparty\FastDelegateBind.h" />
+    <QtMoc Include="Graphics\include\utils\editablegraphicsscene.h" />
+    <ClInclude Include="Graphics\include\operations\ellipsclipper.h" />
+    <ClInclude Include="Graphics\include\operations\polygonclipper.h" />
+    <ClInclude Include="Graphics\include\operations\polygonclipper2.h" />
+    <ClInclude Include="Graphics\include\operations\polygonmerger.h" />
+    <ClInclude Include="Graphics\include\operations\rectclipper.h" />
+    <ClInclude Include="Graphics\include\operations\shapeclippingevents.h" />
+    <ClInclude Include="Graphics\include\operations\shapedeleter.h" />
+    <ClInclude Include="Graphics\include\primitives\ellips.h" />
+    <ClInclude Include="Graphics\include\primitives\polygon.h" />
+    <ClInclude Include="Graphics\include\primitives\rect.h" />
+    <ClInclude Include="Graphics\include\primitives\shape.h" />
+    <ClInclude Include="Graphics\include\utils\handcursorevents.h" />
+    <ClInclude Include="Graphics\include\utils\MouseTrackCommand.h" />
+    <ClInclude Include="Graphics\include\utils\mousetracker.h" />
+    <ClInclude Include="Graphics\include\utils\nodeitem.h" />
+    <ClInclude Include="Graphics\include\utils\property.hpp" />
+    <ClInclude Include="Graphics\include\utils\regionitem.h" />
+    <ClInclude Include="Graphics\include\utils\roidynamiclabel.h" />
+    <ClInclude Include="Graphics\include\utils\seeditem.h" />
+    <ClInclude Include="Graphics\include\utils\shapeevents.h" />
+    <ClInclude Include="Graphics\include\utils\shape_item.h" />
+    <ClInclude Include="Graphics\include\utils\types.h" />
+    <QtMoc Include="Graphics\include\utils\wheelscalablegraphicsscene.h" />
+    <ClInclude Include="include\DEFINE.h" />
+    <QtMoc Include="include\RealTime3DWidget.h" />
+    <QtMoc Include="include\ShowWidget.h" />
+    <QtMoc Include="include\scalablegraphicsview.h" />
+    <QtMoc Include="include\DrawingDock.h" />
+    <QtMoc Include="include\DrawWidget.h" />
+    <QtMoc Include="include\MyMessage.h" />
+    <QtMoc Include="include\Communication.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9C531E35-D459-475C-ADF4-2C41B64AE4FB}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.17763.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>.\include;.\Graphics\include;.\Graphics;.\CustomPlot;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>.\include;.\Graphics\include;.\Graphics;.\CustomPlot;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2017_64</QtInstall>
+    <QtModules>core;gui;network;printsupport;serialport;widgets;xml</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc2017_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

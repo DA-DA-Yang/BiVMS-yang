@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RealTimeMenuBar</class>
+ <widget class="QMenuBar" name="RealTimeMenuBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>86</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RealTimeMenuBar</string>
+  </property>
+  <widget class="QMenu" name="menu">
+   <property name="title">
+    <string>项目</string>
+   </property>
+   <addaction name="actionNewProject"/>
+   <addaction name="actionLoadProject"/>
+   <addaction name="actionProjectInformation"/>
+   <addaction name="separator"/>
+   <addaction name="actionExit"/>
+  </widget>
+  <action name="actionNewProject">
+   <property name="text">
+    <string>新建项目</string>
+   </property>
+  </action>
+  <action name="actionLoadProject">
+   <property name="text">
+    <string>加载项目</string>
+   </property>
+  </action>
+  <action name="actionProjectInformation">
+   <property name="text">
+    <string>项目信息</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>退出程序</string>
+   </property>
+  </action>
+  <addaction name="menu"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

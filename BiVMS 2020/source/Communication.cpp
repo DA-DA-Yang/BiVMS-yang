@@ -47,30 +47,30 @@ void Communication::sendMessage(const char * mes) noexcept
 }
 //发送给另一个站的数据
 //const char * dataBuffer 需要传输的数据指针
-void Communication::sendData(const char * dataBuffer) noexcept
+void Communication::sendImageBuffer(const unsigned char* imgBuffer, int bufferSize) noexcept
 {
 	/*计算指针长度*/
 	qDebug() << "communication writeData thread:" << QThread::currentThreadId();
 	m_writeData.clear();
-	int length = strlen(dataBuffer);
-	for (int i = 0; i < length; ++i)
+	for (int i = 0; i < bufferSize; ++i)
 	{
-		m_writeData.append(dataBuffer[i]);
+		m_writeData.append(imgBuffer[i]);
 	}
 	emit _signalSendData();
 }
 //获取从另一个站传来的数据
 //char* outBuffer 返回的数据指针，需提前开辟好空间
 //int dataLength  需要读取的数据长度
-bool Communication::getData(char* outBuffer, int dataLength) noexcept
+bool Communication::getImageBuffer(unsigned char* outBuffer, int bufferSize) noexcept
 {
 	//读取数据
-	if (m_readData.size() < dataLength)
+	if (m_readData.size() < bufferSize)
 		return false;
-	memcpy(outBuffer, m_readData, dataLength);
-	//m_readData.remove(0, dataLength);
+	qDebug() << "get DataBuffer Length:" << m_readData.size();
+	memcpy(outBuffer, m_readData, bufferSize);
 	m_readData.clear();
 	//发送数据读取完成信号
+	qDebug() << "Send message_completed" << QThread::currentThreadId();
 	sendMessage(MES_COMPLETED);
 	return true;
 }

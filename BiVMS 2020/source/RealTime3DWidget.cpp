@@ -62,9 +62,8 @@ void RealTime3DWidget::_openCamera() noexcept
 				//打开图像--使用相机时删除！！！
 				m_masterImg.load("2.bmp");
 				//发送图像数据
-				m_communincation->sendData((char*)m_masterImg.bits());
+				m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
 			}
-
 		}
 		else
 		{
@@ -164,7 +163,7 @@ void RealTime3DWidget::_updateServantShow() noexcept
 	m_FPSServantShow++;
 	if (m_servantImg.bits())
 	{
-		if (m_communincation->getData((char*)m_servantImg.bits(), strlen((char*)m_servantImg.bits())))
+		if (m_communincation->getImageBuffer(m_servantImg.bits(),m_servantImg.byteCount()))
 		{
 			if (m_showServant)
 			{
@@ -196,7 +195,7 @@ void RealTime3DWidget::_sendServantImg() noexcept
 {
 	if (m_masterImg.bits())
 	{
-		m_communincation->sendData((char*)m_masterImg.bits());
+		m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
 	}
 }
 

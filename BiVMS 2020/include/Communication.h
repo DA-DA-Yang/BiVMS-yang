@@ -34,9 +34,9 @@ public:
 	//发送给主站或辅站信号（短字符命令-定义有宏）
 	void sendMessage(const char* mes) noexcept;
 	//写入大数据
-	void sendData(const char* dataBuffer) noexcept;
+	void sendImageBuffer(const unsigned char* imgBuffer,int bufferSize) noexcept;
 	//获取大数据
-	bool getData(char* outBuffer,int dataLength) noexcept;
+	bool getImageBuffer(unsigned char* outBuffer,int bufferSize) noexcept;
 	//判断主站与辅站是否连接成功
 	inline bool isConnected() noexcept { return m_connectFlag; }
 	//判断本站是否为主站

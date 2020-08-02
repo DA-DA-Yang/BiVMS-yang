@@ -41,7 +41,7 @@ void RealTime3DWidget::_openCamera() noexcept
 				FlagPlugin* flag_master = new FlagPlugin(m_showMaster);
 				flag_master->set_Flag("Ö÷Õ¾");
 				ui.horizontalLayout->addWidget(m_showMaster);
-				//¸¨Õ¾»­ÃæÏÔÊ¾ÊÓÍ¼
+				//Ö÷Õ¾ÖĞ¸¨Õ¾»­ÃæÏÔÊ¾ÊÓÍ¼
 				m_showServant = new ShowWidget(this);
 				FlagPlugin* flag_servant = new FlagPlugin(m_showServant);
 				flag_servant->set_Flag("¸¨Õ¾");
@@ -100,6 +100,7 @@ void RealTime3DWidget::_openCamera() noexcept
 	m_timer->start();
 	connect(m_timer, &QTimer::timeout, this, &RealTime3DWidget::_updateShow);
 	m_timeMasterShow.start();
+	m_timeServantShow.start();
 	m_computeTime.start();
 	return;
 }
@@ -153,6 +154,14 @@ void RealTime3DWidget::_updateShow() noexcept
 void RealTime3DWidget::_updateServantShow() noexcept
 {
 	//¶ÁÈ¡¸¨Õ¾µÄÍ¼Ïñ
+	//¼ÆËãÏÔÊ¾Ö¡ÂÊ
+	if (m_timeServantShow.elapsed() >= 1000)
+	{
+		m_timeServantShow.restart();
+		m_showServant->showFPS(m_FPSServantShow);
+		m_FPSServantShow = 0;
+	}
+	m_FPSServantShow++;
 	if (m_servantImg.bits())
 	{
 		if (m_communincation->getData((char*)m_servantImg.bits(), strlen((char*)m_servantImg.bits())))
@@ -185,9 +194,9 @@ void RealTime3DWidget::_finishCompute() noexcept
 
 void RealTime3DWidget::_sendServantImg() noexcept
 {
-	if (m_servantImg.bits())
+	if (m_masterImg.bits())
 	{
-		m_communincation->sendData((char*)m_servantImg.bits());
+		m_communincation->sendData((char*)m_masterImg.bits());
 	}
 }
 

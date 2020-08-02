@@ -16,9 +16,9 @@ BiVMS2020::BiVMS2020(QWidget *parent)
 	connect(ui.tabWidget, SIGNAL(currentChanged(int)), this, SLOT(_onTabWidgetCurrentIndexChanged()));
 	//打开通信
 	m_communicationMessage = new Communication("169.254.45.62", 8888);
-	m_communicationMessage->openMaster();
+	m_communicationMessage->openServant();
 	m_communicationData = new Communication("169.254.45.62", 6666);
-	m_communicationData->openMaster();
+	m_communicationData->openServant();
 
 	connect(m_communicationMessage, &Communication::signalOpen, this, &BiVMS2020::_load_RealTime3DWidget);
 	connect(m_communicationMessage, &Communication::connected, this, &BiVMS2020::_onCommunicationConnected);

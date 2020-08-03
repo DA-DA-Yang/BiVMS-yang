@@ -175,10 +175,10 @@ void RealTime3DWidget::_updateServantShow() noexcept
 	//¶ÁÈ¡¸¨Õ¾µÄÍ¼Ïñ
 	if (m_servantImg.bits())
 	{
-		auto byteArray = m_communicationImage->getData();
-		if (byteArray.size()== m_servantImg.byteCount())
+		auto byteArrayImage= m_communicationImage->getData();
+		if (byteArrayImage.size()== m_servantImg.byteCount())
 		{
-			memcpy(m_servantImg.bits(), byteArray, m_servantImg.byteCount());
+			memcpy(m_servantImg.bits(), byteArrayImage, m_servantImg.byteCount());
 			m_showServant->showImage(m_servantImg);
 			//¼ÆËãÏÔÊ¾Ö¡ÂÊ
 			if (m_timeServantShow.elapsed() >= 1000)
@@ -189,8 +189,8 @@ void RealTime3DWidget::_updateServantShow() noexcept
 			}
 			m_FPSServantShow++;
 		}
-		auto byteArray = m_communicationData->getData();
-		m_showServant->showTime((QString)byteArray);
+		auto byteArrayData = m_communicationData->getData();
+		m_showServant->showTime((QString)byteArrayData);
 	}
 	
 }

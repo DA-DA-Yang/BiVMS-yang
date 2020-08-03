@@ -1,6 +1,6 @@
 #pragma once
 //Í¨ÐÅºê
-#define SIZE_MAXBYTEWRITE         65535
+#define SIZE_MAXBYTEWRITE         50000
 #define	MES_OPEN_WIDGET	     "OPEN"
 #define	MES_EXIT	         "CLOSE"
 #define MES_NEW_PROJECT	     "NEW_PROJECT"

@@ -50,6 +50,9 @@ void RealTime3DWidget::_openCamera() noexcept
 				m_masterImg.load("1.bmp");
 				m_servantImg.load("1.bmp");
 				m_communicationImage->setDataBufferSize(m_servantImg.byteCount());
+				QDateTime current_date_time = QDateTime::currentDateTime();
+				QString current_date = current_date_time.toString("yyyy.MM.dd hh:mm:ss.zzz");
+				m_communicationData->setDataBufferSize(current_date.size());
 				//发送辅站打开相机信号
 				m_communicationMessage->sendMessage(MES_OPEN_CAMERA);
 			}
@@ -184,13 +187,16 @@ void RealTime3DWidget::_updateServantShow() noexcept
 			if (m_timeServantShow.elapsed() >= 1000)
 			{
 				m_timeServantShow.restart();
-				m_showServant->showFPS(m_FPSServantShow);
+				//m_showServant->showFPS(m_FPSServantShow);
 				m_FPSServantShow = 0;
 			}
 			m_FPSServantShow++;
 		}
 		auto byteArrayData = m_communicationData->getData();
-		m_showServant->showTime((QString)byteArrayData);
+		if (byteArrayData.size())
+		{
+			m_showServant->showTime((QString)byteArrayData);
+		}
 	}
 	
 }

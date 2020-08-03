@@ -148,28 +148,43 @@ void RealTime3DWidget::_updateShow() noexcept
 	m_FPSMasterShow++;
 	if (m_masterImg.bits())
 		m_showMaster->showImage(m_masterImg);
+	_updateServantShow();
 }
 //主站中-辅站图像显示，由通信控制
 void RealTime3DWidget::_updateServantShow() noexcept
 {
 	//读取辅站的图像
-	//计算显示帧率
-	if (m_timeServantShow.elapsed() >= 1000)
-	{
-		m_timeServantShow.restart();
-		m_showServant->showFPS(m_FPSServantShow);
-		m_FPSServantShow = 0;
-	}
-	m_FPSServantShow++;
 	if (m_servantImg.bits())
 	{
-		if (m_communincation->getImageBuffer(m_servantImg.bits(),m_servantImg.byteCount()))
+		auto byteArray = m_communincation->getData();
+		if (byteArray.size()== m_servantImg.byteCount())
 		{
-			if (m_showServant)
+			memcpy(m_servantImg.bits(), byteArray, m_servantImg.byteCount());
+			m_showServant->showImage(m_servantImg);
+			//计算显示帧率
+			if (m_timeServantShow.elapsed() >= 1000)
 			{
-				m_showServant->showImage(m_servantImg);
+				m_timeServantShow.restart();
+				m_showServant->showFPS(m_FPSServantShow);
+				m_FPSServantShow = 0;
 			}
+			m_FPSServantShow++;
 		}
+		//if (m_communincation->getImageBuffer(m_servantImg.bits(),m_servantImg.byteCount()))
+		//{
+		//	if (m_showServant)
+		//	{
+		//		m_showServant->showImage(m_servantImg);
+		//		//计算显示帧率
+		//		if (m_timeServantShow.elapsed() >= 1000)
+		//		{
+		//			m_timeServantShow.restart();
+		//			m_showServant->showFPS(m_FPSServantShow);
+		//			m_FPSServantShow = 0;
+		//		}
+		//		m_FPSServantShow++;
+		//	}
+		//}
 	}
 	
 }

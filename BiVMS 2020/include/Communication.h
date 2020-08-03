@@ -14,6 +14,7 @@
 #include <QtNetwork/QTcpServer>
 #include <QtNetwork/QTcpSocket>
 #include <QThread>
+#include <QTime>
 #include "MyMessage.h"
 #include "DEFINE.h"
 
@@ -31,11 +32,15 @@ public:
 	void openServant() noexcept;
 	//断开通信
 	void breakConnect() noexcept;
+	//设置传输数据大小
+	inline void setDataBufferSize(int size) noexcept { m_dataBufferSize = size; }
 	//发送给主站或辅站信号（短字符命令-定义有宏）
 	void sendMessage(const char* mes) noexcept;
-	//写入大数据
+	void sendData(const QByteArray sendByteArray);
+	QByteArray getData();
+	//写入图像数据
 	void sendImageBuffer(const unsigned char* imgBuffer,int bufferSize) noexcept;
-	//获取大数据
+	//获取图像数据
 	bool getImageBuffer(unsigned char* outBuffer,int bufferSize) noexcept;
 	//判断主站与辅站是否连接成功
 	inline bool isConnected() noexcept { return m_connectFlag; }
@@ -109,5 +114,8 @@ private:
 	QByteArray          m_readData{};                 //读取的数据
 	QString             m_servantIP{};                //辅站ip4地址
 	qint16              m_port{};                     //端口
+
+	int                 m_dataBufferSize{};           //读取数据大小
+	QVector<QByteArray> m_ByteArrayVec;               //数据缓冲区
 };
 

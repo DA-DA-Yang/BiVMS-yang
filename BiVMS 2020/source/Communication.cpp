@@ -45,6 +45,23 @@ void Communication::sendMessage(const char * mes) noexcept
 	m_writeMessage.append(mes);
 	emit _signalSendMessage();
 }
+//发送数据
+void Communication::sendData(const QByteArray sendByteArray)
+{
+	m_writeData.clear();
+	m_writeData.append(sendByteArray);
+	emit _signalSendData();
+}
+QByteArray Communication::getData()
+{
+	QByteArray out;
+	if (m_ByteArrayVec.size() > 0)
+	{
+		out.append(m_ByteArrayVec[0]);
+		m_ByteArrayVec.pop_front();
+	}
+	return out;
+}
 //发送给另一个站的数据
 //const char * dataBuffer 需要传输的数据指针
 void Communication::sendImageBuffer(const unsigned char* imgBuffer, int bufferSize) noexcept
@@ -88,7 +105,6 @@ void Communication::_sendMessage() noexcept
 void Communication::_getMessage() noexcept
 {
 	//从通信中取出内容
-	qDebug() << "communication from thread:" << QThread::currentThreadId();
 	if (m_tcpSocket)
 	{
 		QByteArray mes = m_tcpSocket->readAll();
@@ -140,8 +156,20 @@ void Communication::_getMessage() noexcept
 		else
 		{
 			m_readData.append(mes);
-			if(m_readData.size()>=3145732)
-				emit signalCompleted();
+			QDateTime current_date_time = QDateTime::currentDateTime();
+			QString current_date = current_date_time.toString("yyyy.MM.dd hh:mm:ss.zzz");
+			qDebug() << "Communication data size:" << m_readData.size();
+			qDebug() << "Communication time:" << current_date;
+			//提取数据
+			if (m_readData.size() >= m_dataBufferSize)
+			{
+				QByteArray ba;
+				ba.resize(m_dataBufferSize);
+				memcpy(ba.data(), m_readData, m_dataBufferSize);
+				m_ByteArrayVec.push_back(ba);
+				m_readData.remove(0, m_dataBufferSize);
+			}
+				/*emit signalCompleted();*/
 		}
 	}
 	

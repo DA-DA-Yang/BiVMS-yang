@@ -48,13 +48,13 @@ public:
 		m_communincation = communication;
 		if (m_communincation->isMaster())
 		{
-			connect(m_communincation, &Communication::signalCompleted, this, &RealTime3DWidget::_updateServantShow);
+			//connect(m_communincation, &Communication::signalCompleted, this, &RealTime3DWidget::_updateServantShow);
 		}
 		else
 		{
 			connect(m_communincation, &Communication::signalOpenCamera, this, &RealTime3DWidget::_openCamera);
 			connect(m_communincation, &Communication::signalCloseCamera, this, &RealTime3DWidget::_closeCamera);
-			connect(m_communincation, &Communication::signalCompleted, this, &RealTime3DWidget::_sendServantImg);
+			//connect(m_communincation, &Communication::signalCompleted, this, &RealTime3DWidget::_sendServantImg);
 		}
 		
 		

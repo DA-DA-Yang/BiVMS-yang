@@ -19,7 +19,6 @@ BiVMS2020::BiVMS2020(QWidget *parent)
 	m_communicationMessage->openServant();
 	m_communicationData = new Communication("169.254.45.62", 6666);
 	m_communicationData->openServant();
-
 	connect(m_communicationMessage, &Communication::signalOpen, this, &BiVMS2020::_load_RealTime3DWidget);
 	connect(m_communicationMessage, &Communication::connected, this, &BiVMS2020::_onCommunicationConnected);
 	connect(m_communicationMessage, &Communication::disconnected, this, &BiVMS2020::_onCommunicationDisconnected);

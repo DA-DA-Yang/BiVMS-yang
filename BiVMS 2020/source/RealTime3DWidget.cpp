@@ -49,6 +49,7 @@ void RealTime3DWidget::_openCamera() noexcept
 				//打开图像--使用相机时删除！！！
 				m_masterImg.load("1.bmp");
 				m_servantImg.load("1.bmp");
+				m_communincation->setDataBufferSize(m_servantImg.byteCount());
 				//发送辅站打开相机信号
 				m_communincation->sendMessage(MES_OPEN_CAMERA);
 			}
@@ -61,6 +62,7 @@ void RealTime3DWidget::_openCamera() noexcept
 				ui.horizontalLayout->addWidget(m_showMaster);
 				//打开图像--使用相机时删除！！！
 				m_masterImg.load("2.bmp");
+				//m_communincation->setDataBufferSize(m_masterImg.byteCount());
 				//发送图像数据
 				m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
 			}
@@ -148,7 +150,23 @@ void RealTime3DWidget::_updateShow() noexcept
 	m_FPSMasterShow++;
 	if (m_masterImg.bits())
 		m_showMaster->showImage(m_masterImg);
-	_updateServantShow();
+	if (m_communincation)
+	{
+		if (m_communincation->isConnected())
+		{
+			if (m_communincation->isMaster())
+			{
+				_updateServantShow();
+			}
+			else
+			{
+				_sendServantImg();
+			}
+		}
+			
+	}
+		
+	
 }
 //主站中-辅站图像显示，由通信控制
 void RealTime3DWidget::_updateServantShow() noexcept
@@ -210,7 +228,11 @@ void RealTime3DWidget::_sendServantImg() noexcept
 {
 	if (m_masterImg.bits())
 	{
-		m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
+		QByteArray ba;
+		ba.resize(m_masterImg.byteCount());
+		memcpy(ba.data(), m_masterImg.bits(), m_masterImg.byteCount());
+		m_communincation->sendData(ba);
+		//m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
 	}
 }
 

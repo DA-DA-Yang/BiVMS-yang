@@ -32,9 +32,13 @@ public:
 	inline void copyProjectPtr(Project* ptr) noexcept { m_project = ptr; }
 	//判断项目是否创建成功
 	inline bool isCreateProject() noexcept { return m_isCreateProject; }
-	inline void setCommunication(Communication* communication) noexcept
+	//设置通信，该界面需要设置三个通信端口
+	inline void setCommunication(Communication* cMessage, Communication* cImage, Communication* cData) noexcept
 	{
-		m_communicationMessage = communication;
+		m_communicationMessage = cMessage;
+		m_communicationImage = cImage;
+		m_communicationData = cData;
+		//注意分清楚通信端口连接对象
 		connect(m_communicationMessage, &Communication::connected, this, &NewProjectDlg::_slot_get_Connect);
 	}
 
@@ -72,7 +76,9 @@ private:
 	History *m_history = nullptr;								//创建历史成员变量
 	//std::shared_ptr<Project> m_project = nullptr;				//项目信息成员变量
 	Project *m_project = nullptr;								//项目信息成员变量
-	Communication* m_communicationMessage = nullptr;                   //通信
+	Communication* m_communicationMessage = nullptr;            //命令通信端口
+	Communication* m_communicationImage = nullptr;              //图像通信端口
+	Communication* m_communicationData = nullptr;               //数据通信端口
 private:
 	Ui::NewProjectDlg ui;
 

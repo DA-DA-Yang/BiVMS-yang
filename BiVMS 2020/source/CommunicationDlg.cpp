@@ -24,6 +24,17 @@ void CommunicationDlg::on_pBt_ConnectMessage()
 	}
 }
 
+void CommunicationDlg::on_pBt_ConnectImage()
+{
+	if (m_communicationImage)
+	{
+		if (!m_communicationImage->isConnected())
+		{
+			m_communicationImage->openMaster();
+		}
+	}
+}
+
 void CommunicationDlg::on_pBt_ConnectData()
 {
 	if (m_communicationData)
@@ -51,6 +62,25 @@ void CommunicationDlg::set_statusMessage()
 	else
 	{
 		ui.label_statusMessage->setText(QString::fromLocal8Bit("错误"));
+	}
+}
+
+void CommunicationDlg::set_statusImage()
+{
+	if (m_communicationImage)
+	{
+		if (m_communicationImage->isConnected())
+		{
+			ui.label_statusImage->setText(QString::fromLocal8Bit("已连接"));
+		}
+		else
+		{
+			ui.label_statusImage->setText(QString::fromLocal8Bit("未连接"));
+		}
+	}
+	else
+	{
+		ui.label_statusImage->setText(QString::fromLocal8Bit("错误"));
 	}
 }
 

@@ -34,14 +34,13 @@ public:
 	void breakConnect() noexcept;
 	//设置传输数据大小
 	inline void setDataBufferSize(int size) noexcept { m_dataBufferSize = size; }
+	inline int dataBufferSize() noexcept { return m_dataBufferSize; }
 	//发送给主站或辅站信号（短字符命令-定义有宏）
 	void sendMessage(const char* mes) noexcept;
+	//发送数据（QByteArray类型）
 	void sendData(const QByteArray sendByteArray);
+	//接收数据（从缓冲区内拿出第一个数据包）
 	QByteArray getData();
-	//写入图像数据
-	void sendImageBuffer(const unsigned char* imgBuffer,int bufferSize) noexcept;
-	//获取图像数据
-	bool getImageBuffer(unsigned char* outBuffer,int bufferSize) noexcept;
 	//判断主站与辅站是否连接成功
 	inline bool isConnected() noexcept { return m_connectFlag; }
 	//判断本站是否为主站

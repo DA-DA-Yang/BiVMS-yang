@@ -30,11 +30,11 @@ void RealTime3DWidget::_openCamera() noexcept
 		delete m_showServant;
 		m_showServant = nullptr;
 	}
-	if (m_communincation)
+	if (m_communicationMessage)
 	{
-		if (m_communincation->isConnected())
+		if (m_communicationMessage->isConnected())
 		{
-			if (m_communincation->isMaster())
+			if (m_communicationMessage->isMaster())
 			{
 				//主站画面显示视图
 				m_showMaster = new ShowWidget(this);
@@ -49,9 +49,9 @@ void RealTime3DWidget::_openCamera() noexcept
 				//打开图像--使用相机时删除！！！
 				m_masterImg.load("1.bmp");
 				m_servantImg.load("1.bmp");
-				m_communincation->setDataBufferSize(m_servantImg.byteCount());
+				m_communicationImage->setDataBufferSize(m_servantImg.byteCount());
 				//发送辅站打开相机信号
-				m_communincation->sendMessage(MES_OPEN_CAMERA);
+				m_communicationMessage->sendMessage(MES_OPEN_CAMERA);
 			}
 			else
 			{
@@ -62,9 +62,6 @@ void RealTime3DWidget::_openCamera() noexcept
 				ui.horizontalLayout->addWidget(m_showMaster);
 				//打开图像--使用相机时删除！！！
 				m_masterImg.load("2.bmp");
-				//m_communincation->setDataBufferSize(m_masterImg.byteCount());
-				//发送图像数据
-				m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
 			}
 		}
 		else
@@ -111,10 +108,10 @@ void RealTime3DWidget::_closeCamera() noexcept
 	//先停止定时器
 	m_timer->stop();
 	//发送辅站关闭相机信号
-	if (m_communincation)
-		if (m_communincation->isConnected())
-			if (m_communincation->isMaster())
-				m_communincation->sendMessage(MES_CLOSE_CAMERA);
+	if (m_communicationMessage)
+		if (m_communicationMessage->isConnected())
+			if (m_communicationMessage->isMaster())
+				m_communicationMessage->sendMessage(MES_CLOSE_CAMERA);
 	//等待一段时间
 	QTime t;
 	t.start();
@@ -150,11 +147,11 @@ void RealTime3DWidget::_updateShow() noexcept
 	m_FPSMasterShow++;
 	if (m_masterImg.bits())
 		m_showMaster->showImage(m_masterImg);
-	if (m_communincation)
+	if (m_communicationImage)
 	{
-		if (m_communincation->isConnected())
+		if (m_communicationImage->isConnected())
 		{
-			if (m_communincation->isMaster())
+			if (m_communicationImage->isMaster())
 			{
 				_updateServantShow();
 			}
@@ -174,7 +171,7 @@ void RealTime3DWidget::_updateServantShow() noexcept
 	//读取辅站的图像
 	if (m_servantImg.bits())
 	{
-		auto byteArray = m_communincation->getData();
+		auto byteArray = m_communicationImage->getData();
 		if (byteArray.size()== m_servantImg.byteCount())
 		{
 			memcpy(m_servantImg.bits(), byteArray, m_servantImg.byteCount());
@@ -188,21 +185,6 @@ void RealTime3DWidget::_updateServantShow() noexcept
 			}
 			m_FPSServantShow++;
 		}
-		//if (m_communincation->getImageBuffer(m_servantImg.bits(),m_servantImg.byteCount()))
-		//{
-		//	if (m_showServant)
-		//	{
-		//		m_showServant->showImage(m_servantImg);
-		//		//计算显示帧率
-		//		if (m_timeServantShow.elapsed() >= 1000)
-		//		{
-		//			m_timeServantShow.restart();
-		//			m_showServant->showFPS(m_FPSServantShow);
-		//			m_FPSServantShow = 0;
-		//		}
-		//		m_FPSServantShow++;
-		//	}
-		//}
 	}
 	
 }
@@ -231,8 +213,7 @@ void RealTime3DWidget::_sendServantImg() noexcept
 		QByteArray ba;
 		ba.resize(m_masterImg.byteCount());
 		memcpy(ba.data(), m_masterImg.bits(), m_masterImg.byteCount());
-		m_communincation->sendData(ba);
-		//m_communincation->sendImageBuffer(m_masterImg.bits(), m_masterImg.byteCount());
+		m_communicationImage->sendData(ba);
 	}
 }
 

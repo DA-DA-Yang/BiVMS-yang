@@ -14,11 +14,18 @@ BiVMS2020::BiVMS2020(QWidget *parent)
 	_load_StartPageWidget();
 	connect(ui.tabWidget, SIGNAL(tabCloseRequested(int)), this, SLOT(_remove_TabWidget(int)));
 	connect(ui.tabWidget, SIGNAL(currentChanged(int)), this, SLOT(_onTabWidgetCurrentIndexChanged()));
-	//打开通信
-	m_communicationMessage = new Communication("169.254.45.62", 8888);
+
+	/*************************通信*************************/
+	//命令通信端口
+	m_communicationMessage = new Communication("169.254.45.62", 1111);
 	m_communicationMessage->openServant();
-	m_communicationData = new Communication("169.254.45.62", 6666);
+	//图像通信端口
+	m_communicationImage = new Communication("169.254.45.62", 2222);
+	m_communicationImage->openServant();
+	//数据通信端口
+	m_communicationData = new Communication("169.254.45.62", 3333);
 	m_communicationData->openServant();
+	//命令通信端口与主界面的连接函数
 	connect(m_communicationMessage, &Communication::signalOpen, this, &BiVMS2020::_load_RealTime3DWidget);
 	connect(m_communicationMessage, &Communication::connected, this, &BiVMS2020::_onCommunicationConnected);
 	connect(m_communicationMessage, &Communication::disconnected, this, &BiVMS2020::_onCommunicationDisconnected);
@@ -26,12 +33,19 @@ BiVMS2020::BiVMS2020(QWidget *parent)
 	//通信对话框
 	CommunicationDlg* communicationDlg = new CommunicationDlg(this);
 
+	/*************************项目*************************/
+	//创建空项目
+	m_project = new Project(this);
+	
+	/*************************状态*************************/
 	//设置状态栏信息
 	m_statusLabel = new QLabel(this);
 	m_statusLabel->setText(QString::fromLocal8Bit("提示：尚未加载任何项目！"));
 	m_statusLabel->setTextFormat(Qt::RichText);
 	m_statusLabel->setOpenExternalLinks(true);
 	ui.statusBar->addPermanentWidget(m_statusLabel);
+
+	/*************************菜单*************************/
 	//菜单栏消息响应函数
 	connect(ui.actionRealTime3DProject, &QAction::triggered, this, &BiVMS2020::_new_RealTime3DProject);
 	connect(ui.actionAnalysis3DProject, &QAction::triggered, this, &BiVMS2020::_new_Analysis3DProject);
@@ -41,9 +55,6 @@ BiVMS2020::BiVMS2020(QWidget *parent)
 	connect(ui.actionProjectInformation, &QAction::triggered, this, &BiVMS2020::_load_ProjectInformation);
 	connect(ui.actionCommuincationSetting, &QAction::triggered, this, &BiVMS2020::_onCommunicationSetting);
 	connect(ui.actionExit, &QAction::triggered, this, &BiVMS2020::_Exit);
-	//创建空项目
-	//m_project = std::make_shared<Project>(this);
-	m_project = new Project(this);
 }
 
 void BiVMS2020::closeEvent(QCloseEvent * event)
@@ -96,7 +107,7 @@ void BiVMS2020::_new_RealTime3DProject() noexcept
 {
 	//新建三维实时测量项目
 	m_newProjectDlg = new NewProjectDlg(this);
-	m_newProjectDlg->setCommunication(m_communicationMessage);
+	m_newProjectDlg->setCommunication(m_communicationMessage, m_communicationImage, m_communicationData);
 	m_newProjectDlg->copyProjectPtr(m_project);
 	if (m_newProjectDlg->exec() != QDialog::Accepted)
 		return;
@@ -166,7 +177,7 @@ void BiVMS2020::_load_RealTime3DWidget() noexcept
 	this->addToolBar(m_realTime3DToolBar);
 	//主界面添加实时界面
 	m_realTime3DWidget = new RealTime3DWidget(this);
-	m_realTime3DWidget->setCommunication(m_communicationMessage);
+	m_realTime3DWidget->setCommunication(m_communicationMessage, m_communicationImage, m_communicationData);
 	if (m_communicationMessage->isConnected()&&!m_communicationMessage->isMaster())
 	{
 		FlagPlugin* flag = new FlagPlugin(this);
@@ -253,8 +264,7 @@ void BiVMS2020::_Exit() noexcept
 void BiVMS2020::_onCommunicationSetting() noexcept
 {
 	CommunicationDlg* dlg = new CommunicationDlg(this);
-	dlg->setCommunicationMessage(m_communicationMessage);
-	dlg->setCommunicationData(m_communicationData);
+	dlg->setCommunication(m_communicationMessage, m_communicationImage, m_communicationData);
 	dlg->show();
 }
 

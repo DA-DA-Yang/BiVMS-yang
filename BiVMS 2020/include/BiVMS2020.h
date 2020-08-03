@@ -67,9 +67,10 @@ signals:
 
 private:
     Ui::BiVMS2020Class  ui;
-	QLabel*             m_statusLabel = nullptr;
-	Communication*      m_communicationMessage = nullptr;      //通信
-	Communication*      m_communicationData = nullptr;      //通信
+	QLabel*             m_statusLabel = nullptr;            //状态栏信息
+	Communication*      m_communicationMessage = nullptr;   //命令通信端口
+	Communication*      m_communicationImage = nullptr;     //图像通信端口
+	Communication*      m_communicationData = nullptr;      //数据通信端口
 	StartDlg*           m_startDlg = nullptr;			//开始界面
 	StartPageWidget*    m_startPageWidget = nullptr;    //起始页
 	RealTime3DWidget*   m_realTime3DWidget = nullptr;   //三维实时界面

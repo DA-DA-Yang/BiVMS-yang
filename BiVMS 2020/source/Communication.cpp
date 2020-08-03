@@ -52,6 +52,9 @@ void Communication::sendData(const QByteArray sendByteArray)
 	m_writeData.append(sendByteArray);
 	emit _signalSendData();
 }
+//接收数据，从缓冲区内获取第一个数据包
+//数据类型为QByteArray，大小已提前设定为m_dataBufferSize
+//实际使用需要数据类型转换
 QByteArray Communication::getData()
 {
 	QByteArray out;
@@ -61,35 +64,6 @@ QByteArray Communication::getData()
 		m_ByteArrayVec.pop_front();
 	}
 	return out;
-}
-//发送给另一个站的数据
-//const char * dataBuffer 需要传输的数据指针
-void Communication::sendImageBuffer(const unsigned char* imgBuffer, int bufferSize) noexcept
-{
-	/*计算指针长度*/
-	qDebug() << "communication writeData thread:" << QThread::currentThreadId();
-	m_writeData.clear();
-	for (int i = 0; i < bufferSize; ++i)
-	{
-		m_writeData.append(imgBuffer[i]);
-	}
-	emit _signalSendData();
-}
-//获取从另一个站传来的数据
-//char* outBuffer 返回的数据指针，需提前开辟好空间
-//int dataLength  需要读取的数据长度
-bool Communication::getImageBuffer(unsigned char* outBuffer, int bufferSize) noexcept
-{
-	//读取数据
-	if (m_readData.size() < bufferSize)
-		return false;
-	qDebug() << "get DataBuffer Length:" << m_readData.size();
-	memcpy(outBuffer, m_readData, bufferSize);
-	m_readData.clear();
-	//发送数据读取完成信号
-	qDebug() << "Send message_completed" << QThread::currentThreadId();
-	sendMessage(MES_COMPLETED);
-	return true;
 }
 
 void Communication::_sendMessage() noexcept

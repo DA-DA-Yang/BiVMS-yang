@@ -43,21 +43,15 @@ public:
 	{
 		m_drawingDock = drawingDock;
 	}
-	inline void setCommunication(Communication* communication) noexcept
+	//设置通信，该界面需要设置三个通信端口
+	inline void setCommunication(Communication* cMessage, Communication* cImage, Communication* cData) noexcept
 	{
-		m_communincation = communication;
-		if (m_communincation->isMaster())
-		{
-			//connect(m_communincation, &Communication::signalCompleted, this, &RealTime3DWidget::_updateServantShow);
-		}
-		else
-		{
-			connect(m_communincation, &Communication::signalOpenCamera, this, &RealTime3DWidget::_openCamera);
-			connect(m_communincation, &Communication::signalCloseCamera, this, &RealTime3DWidget::_closeCamera);
-			//connect(m_communincation, &Communication::signalCompleted, this, &RealTime3DWidget::_sendServantImg);
-		}
-		
-		
+		m_communicationMessage = cMessage;
+		m_communicationImage = cImage;
+		m_communicationData = cData;
+		//注意分清楚通信端口连接对象
+		connect(m_communicationMessage, &Communication::signalOpenCamera, this, &RealTime3DWidget::_openCamera);
+		connect(m_communicationMessage, &Communication::signalCloseCamera, this, &RealTime3DWidget::_closeCamera);
 	}
 private:
 	void _openCamera() noexcept;
@@ -75,7 +69,9 @@ private slots:
 
 private:
 	Ui::RealTime3DWidget ui;
-	Communication*         m_communincation = nullptr; //通信
+	Communication*         m_communicationMessage = nullptr;   //命令通信端口
+	Communication*         m_communicationImage = nullptr;   //图像通信端口
+	Communication*         m_communicationData = nullptr;      //数据通信端口
 	RealTime3DToolBar*     m_toolBar = nullptr;        //工具栏
 	ShowWidget*            m_showMaster = nullptr;     //图像显示界面
 	ShowWidget*            m_showServant = nullptr;    //图像显示界面

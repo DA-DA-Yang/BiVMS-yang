@@ -87,6 +87,24 @@ void NewProjectDlg::_slot_pBt_Connect()
 	{
 		m_communicationMessage->openMaster();
 	}
+	if (m_communicationImage)
+	{
+		m_communicationImage->openMaster();
+	}
+	if (m_communicationData)
+	{
+		m_communicationData->openMaster();
+	}
+	QTime t;
+	t.start();
+	while (t.elapsed() < 1000)
+	{
+		if (m_communicationMessage->isConnected() && m_communicationImage->isConnected() && m_communicationData->isConnected())
+		{
+			_slot_get_Connect();
+			return;
+		}	
+	}
 }
 
 //获取当前时间

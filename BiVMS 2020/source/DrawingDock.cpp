@@ -27,7 +27,7 @@ DrawingDock::DrawingDock(QWidget *parent)
 	m_timer = new QTimer(this);
 	m_timer->setInterval(30);
 	//m_timer->start();
-	connect(m_timer, &QTimer::timeout, this, &DrawingDock::_update_Show);
+	connect(m_timer, &QTimer::timeout, this, &DrawingDock::_updateShow);
 
 	ui.listWidget->setStyleSheet(
 		"QListWidget{border:1px solid gray; color:black; }"
@@ -48,14 +48,14 @@ DrawingDock::~DrawingDock()
 {
 }
 
-void DrawingDock::add_POIPlugin() noexcept
+void DrawingDock::addPOIPlugin() noexcept
 {
 	POIPlugin* poi_plugin = new POIPlugin(ui.listWidget);
 	m_POIPlugins.push_back(poi_plugin);
 	poi_plugin->set_ID(m_POIPlugins.size());
-	poi_plugin->set_MaxValue(0.0);
-	poi_plugin->set_MinValue(0.0);
-	poi_plugin->set_Value(0.0);
+	poi_plugin->setXValue(0.0);
+	poi_plugin->setYValue(0.0);
+	poi_plugin->setZValue(0.0);
 
 	QListWidgetItem *poi_Item = new QListWidgetItem(ui.listWidget);
 	ui.listWidget->addItem(poi_Item);
@@ -63,7 +63,7 @@ void DrawingDock::add_POIPlugin() noexcept
 	ui.listWidget->setItemWidget(poi_Item, poi_plugin);
 }
 
-void DrawingDock::delete_POIPlugin(const int & index) noexcept
+void DrawingDock::deletePOIPlugin(const int & index) noexcept
 {
 	for (int i = index+1; i < m_POIPlugins.size(); ++i)
 	{
@@ -75,7 +75,7 @@ void DrawingDock::delete_POIPlugin(const int & index) noexcept
 	ui.listWidget->update();
 }
 
-void DrawingDock::clear_POIPlugin() noexcept
+void DrawingDock::clearPOIPlugin() noexcept
 {
 
 	for (int i = 0; i < ui.listWidget->count()-1; ++i)
@@ -88,12 +88,12 @@ void DrawingDock::clear_POIPlugin() noexcept
 	ui.listWidget->update();
 }
 
-void DrawingDock::set_POIValue(const int & index, const double & value, const double & maxValue, const double & minValue)
+void DrawingDock::setPOIValue(const int & index, const double & xValue, const double & yValue, const double & zValue)
 {
 	//设置POI插件的数值显示
-	m_POIPlugins[index]->set_MaxValue(0.0);
-	m_POIPlugins[index]->set_MinValue(0.0);
-	m_POIPlugins[index]->set_Value(0.0);
+	m_POIPlugins[index]->setXValue(xValue);
+	m_POIPlugins[index]->setYValue(yValue);
+	m_POIPlugins[index]->setZValue(zValue);
 }
 
 void DrawingDock::setData(QVector<double> time, QVector<double> xData, QVector<double> yData, QVector<double> zData) noexcept
@@ -104,28 +104,59 @@ void DrawingDock::setData(QVector<double> time, QVector<double> xData, QVector<d
 	m_data_X = xData;
 	m_data_Y = yData;
 	m_data_Z = zData;
-	_update_Show();
+	_updateShow();
 }
 
-void DrawingDock::_update_Show() noexcept
+void DrawingDock::setXRange()
+{
+	m_drawWidget_X->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
+	m_drawWidget_Y->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
+	m_drawWidget_Z->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
+}
+
+void DrawingDock::setYRange()
+{
+
+}
+
+void DrawingDock::_updateShow() noexcept
 {
 	if (!m_linesCount)
 		return;
-	m_number = 100;
+	//显示时长
+	switch (ui.comboBox_time->currentIndex())
+	{
+	case 0:
+	{
+		m_number = ui.spinBox_count->value();
+		break;
+	}
+	case 1:
+	{
+		m_number = ui.spinBox_count->value() * 60;
+		break;
+	}
+	case 2:
+	{
+		m_number = ui.spinBox_count->value() * 3600;
+		break;
+	}
+	default:
+		break;
+	}
 	m_drawWidget_X->addData(m_data_Time.back(), m_data_X);
-	m_drawWidget_X->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
 	m_drawWidget_Y->addData(m_data_Time.back(), m_data_Y);
-	m_drawWidget_Y->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
 	m_drawWidget_Z->addData(m_data_Time.back(), m_data_Z);
+	m_drawWidget_X->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
+	m_drawWidget_Y->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
 	m_drawWidget_Z->setXRange(m_data_Time.back(), m_number, Qt::AlignRight);
 	if (m_POIPlugins.size() == m_data_X.size())
 	{
 		for (int i = 0; i < m_POIPlugins.size(); ++i)
 		{
-			set_POIValue(i,m_data_X[i], m_data_Y[i], m_data_Z[i]);
+			setPOIValue(i,m_data_X[i], m_data_Y[i], m_data_Z[i]);
 		}
 	}
-	
 }
 
 

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/test">
+    <file>BiVMS/更新.png</file>
     <file>BiVMS/辐射.png</file>
     <file>BiVMS/Clear-1.png</file>
     <file>BiVMS/delete (1).png</file>

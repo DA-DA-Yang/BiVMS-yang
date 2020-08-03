@@ -72,7 +72,7 @@ void DrawWidget::showLines(int lineSize) noexcept
 		//ui.qCustomPlot->graph(i)->setScatterStyle(QCPScatterStyle::ssCircle);
 	}
 	ui.qCustomPlot->rescaleAxes();
-	ui.qCustomPlot->replot();
+	ui.qCustomPlot->replot(QCustomPlot::rpQueuedReplot);
 }
 
 void DrawWidget::setData(QVector<double> xData, QVector<QVector<double>> yData) noexcept
@@ -101,6 +101,7 @@ void DrawWidget::addData(double xData,QVector<double> yData) noexcept
 	{
 		ui.qCustomPlot->graph(i)->addData(xData, yData[i]);
 	}
+	ui.qCustomPlot->rescaleAxes();
 }
 
 void DrawWidget::setXRange(double position,int count,Qt::AlignmentFlag alignment) noexcept
@@ -161,7 +162,6 @@ void DrawWidget::drawHistogram(QVector<double> index, QVector<double> value,doub
 
 void DrawWidget::updateShow() noexcept
 {
-	ui.qCustomPlot->rescaleAxes();
 	ui.qCustomPlot->replot(QCustomPlot::rpQueuedReplot);
 }
 

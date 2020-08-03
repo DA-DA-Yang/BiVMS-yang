@@ -25,6 +25,7 @@ public:
 	~DrawingDock();
 
 	inline Ui::DrawingDock UI() noexcept { return ui; }
+	//需要绘制的曲线数目
 	inline void show(int linesCount) noexcept
 	{
 		_close();
@@ -33,11 +34,19 @@ public:
 		m_drawWidget_Z->showLines(linesCount);
 		m_linesCount = linesCount;
 	}
-	void add_POIPlugin() noexcept;
-	void delete_POIPlugin(const int& index) noexcept;
-	void clear_POIPlugin() noexcept;
-	void set_POIValue(const int& index, const double& value, const double& maxValue, const double& minValue);
+	//添加POI插件
+	void addPOIPlugin() noexcept;
+	//删除POI插件
+	void deletePOIPlugin(const int& index) noexcept;
+	//清除POI插件
+	void clearPOIPlugin() noexcept;
+	//设置POI插件显示值
+	void setPOIValue(const int & index, const double & xValue, const double & yValue, const double & zValue);
+	//设置曲线及插件显示数据
 	void setData(QVector<double> time, QVector<double> xData, QVector<double> yData, QVector<double> zData) noexcept;
+	//设置显示
+	void setXRange();
+	void setYRange();
 private:
 	inline void _close() noexcept
 	{
@@ -54,7 +63,7 @@ private:
 		m_data_Z.clear();
 	}
 private slots:
-	void _update_Show() noexcept;
+	void _updateShow() noexcept;
 	void _selected_AllPOIPlugins(bool checked) noexcept;
 	void on_checkBox_showX() noexcept;
 	void on_checkBox_showY() noexcept;

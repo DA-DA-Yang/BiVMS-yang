@@ -58,7 +58,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_value">
+      <widget class="QLabel" name="label_XValue">
        <property name="styleSheet">
         <string notr="true">border:0px;</string>
        </property>
@@ -71,7 +71,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_MAXvalue">
+      <widget class="QLabel" name="label_YValue">
        <property name="styleSheet">
         <string notr="true">border:0px;</string>
        </property>
@@ -84,7 +84,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_MINvalue">
+      <widget class="QLabel" name="label_ZValue">
        <property name="styleSheet">
         <string notr="true">border:0px;</string>
        </property>

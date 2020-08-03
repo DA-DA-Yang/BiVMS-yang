@@ -109,7 +109,11 @@ void RealTime3DWidget::_openCamera() noexcept
 void RealTime3DWidget::_closeCamera() noexcept
 {
 	//先停止定时器
-	m_timer->stop();
+	if (m_timer)
+	{
+		delete m_timer;
+		m_timer = nullptr;
+	}
 	//发送辅站关闭相机信号
 	if (m_communicationMessage)
 		if (m_communicationMessage->isConnected())
@@ -148,6 +152,17 @@ void RealTime3DWidget::_updateShow() noexcept
 		m_FPSMasterShow = 0;
 	}
 	m_FPSMasterShow++;
+	//显示数据DEMO
+	QVector<double> time, xData, yData, zData;
+	time.push_back((double)m_count);
+	m_count++;
+	for (int i = 0; i < m_POIs.size(); ++i)
+	{
+		xData.push_back((i + 1)*sin(2.0 * PI*(double)m_timeMasterShow.elapsed() / 1000.0));
+		yData.push_back((i + 1)*sin(2.0 * PI*(double)m_timeMasterShow.elapsed() / 1000.0));
+		zData.push_back((i + 1)*sin(2.0 * PI*(double)m_timeMasterShow.elapsed() / 1000.0));
+	}
+	m_drawingDock->setData(time, xData, yData, zData);
 	if (m_masterImg.bits())
 		m_showMaster->showImage(m_masterImg);
 	if (m_communicationImage)
@@ -178,6 +193,7 @@ void RealTime3DWidget::_updateServantShow() noexcept
 	//读取辅站的图像
 	if (m_servantImg.bits())
 	{
+		
 		auto byteArrayImage= m_communicationImage->getData();
 		if (byteArrayImage.size()== m_servantImg.byteCount())
 		{
@@ -192,12 +208,14 @@ void RealTime3DWidget::_updateServantShow() noexcept
 			}
 			m_FPSServantShow++;
 		}
-		auto byteArrayData = m_communicationData->getData();
-		if (byteArrayData.size())
-		{
-			m_showServant->showTime((QString)byteArrayData);
-		}
 	}
+	//读取数据
+	auto byteArrayData = m_communicationData->getData();
+	if (byteArrayData.size())
+	{
+		m_showServant->showTime((QString)byteArrayData);
+	}
+
 	
 }
 
@@ -252,17 +270,17 @@ void RealTime3DWidget::_slotAddPOI() noexcept
 	auto point_in_scene = m_showMaster->scene()->m_seeds.back();
 	auto index = m_showMaster->scene()->m_seeds.size();
 	m_POIs.push_back({ (int)point_in_scene->x(),(int)point_in_scene->y() });
-	m_drawingDock->add_POIPlugin();
+	m_drawingDock->addPOIPlugin();
 }
 
 void RealTime3DWidget::_slotDeletePOI(int index) noexcept
 {
 	m_POIs.removeAt(index);
-	m_drawingDock->delete_POIPlugin(index);
+	m_drawingDock->deletePOIPlugin(index);
 }
 
 void RealTime3DWidget::_slotClearPOI() noexcept
 {
 	m_POIs.clear();
-	m_drawingDock->clear_POIPlugin();
+	m_drawingDock->clearPOIPlugin();
 }

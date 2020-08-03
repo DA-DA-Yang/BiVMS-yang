@@ -87,6 +87,7 @@ private:
 	QTime                  m_timeServantShow;          //用来辅站画面计算显示帧率的时间
 	int                    m_FPSMasterShow{};          //本站显示帧率
 	int                    m_FPSServantShow{};         //辅站显示帧率
+	int                    m_count{};
 	QTime                  m_computeTime;              //用来统计计算时间
 
 	

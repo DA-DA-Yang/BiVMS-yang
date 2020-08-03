@@ -44,6 +44,24 @@ border-color: rgb(100, 100, 100);</string>
   </property>
   <widget class="QWidget" name="widget">
    <layout class="QGridLayout" name="gridLayout_5">
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="0">
+         <widget class="QListWidget" name="listWidget">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="0">
      <widget class="QPushButton" name="pushButton_setting">
       <property name="sizePolicy">
@@ -61,7 +79,7 @@ border-color: rgb(100, 100, 100);</string>
       </property>
       <property name="icon">
        <iconset resource="../resource/BiVMS2020.qrc">
-        <normaloff>:/界面/BiVMS/MainWnd/魔方1.png</normaloff>:/界面/BiVMS/MainWnd/魔方1.png</iconset>
+        <normaloff>:/test/BiVMS/魔方1.png</normaloff>:/test/BiVMS/魔方1.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -70,9 +88,6 @@ border-color: rgb(100, 100, 100);</string>
        </size>
       </property>
      </widget>
-    </item>
-    <item row="2" column="2">
-     <layout class="QGridLayout" name="gridLayout"/>
     </item>
     <item row="1" column="0" colspan="3">
      <widget class="QWidget" name="widget_setting" native="true">
@@ -254,23 +269,8 @@ font: 9pt &quot;微软雅黑&quot;;
       </layout>
      </widget>
     </item>
-    <item row="2" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="1" column="0">
-         <widget class="QListWidget" name="listWidget">
-          <property name="frameShape">
-           <enum>QFrame::Box</enum>
-          </property>
-          <property name="horizontalScrollMode">
-           <enum>QAbstractItemView::ScrollPerPixel</enum>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+    <item row="2" column="2">
+     <layout class="QGridLayout" name="gridLayout"/>
     </item>
    </layout>
   </widget>

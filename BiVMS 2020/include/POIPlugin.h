@@ -20,9 +20,9 @@ public:
 	POIPlugin(QWidget *parent = Q_NULLPTR);
 	~POIPlugin();
 	inline void set_ID(int index) noexcept { ui.label_ID->setText(QString::fromLocal8Bit("²âµã") + QString::number(index)); }
-	inline void set_MaxValue(double value) noexcept { ui.label_MAXvalue->setText(QString::number(value,'f',3)); }
-	inline void set_MinValue(double value) noexcept { ui.label_MINvalue->setText(QString::number(value,'f',3)); }
-	inline void set_Value(double value) noexcept { ui.label_value->setText(QString::number(value,'f',3)); }
+	inline void setXValue(double value) noexcept { ui.label_XValue->setText(QString::number(value,'f',3)); }
+	inline void setYValue(double value) noexcept { ui.label_YValue->setText(QString::number(value,'f',3)); }
+	inline void setZValue(double value) noexcept { ui.label_ZValue->setText(QString::number(value,'f',3)); }
 	inline void set_Checked(bool checked) noexcept { ui.checkBox->setChecked(checked); }
 private slots:
 	inline void on_checkBox_clicked() noexcept { emit signal_CheckChanged(ui.checkBox->isChecked()); }

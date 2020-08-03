@@ -24,6 +24,7 @@ public:
 
 	void showImage(QImage& img) noexcept;
 	void showFPS(int FPS) noexcept;
+	void showTime(QString strTime) noexcept;
 	inline const EditableGraphicsScene* scene() noexcept { return m_scene; }
 
 	inline void add_Point() noexcept 

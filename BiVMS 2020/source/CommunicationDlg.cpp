@@ -5,6 +5,7 @@ CommunicationDlg::CommunicationDlg(QWidget *parent)
 {
 	ui.setupUi(this);
 	connect(ui.pushButton_Message, &QPushButton::clicked, this, &CommunicationDlg::on_pBt_ConnectMessage);
+	connect(ui.pushButton_Image, &QPushButton::clicked, this, &CommunicationDlg::on_pBt_ConnectImage);
 	connect(ui.pushButton_Data, &QPushButton::clicked, this, &CommunicationDlg::on_pBt_ConnectData);
 
 }

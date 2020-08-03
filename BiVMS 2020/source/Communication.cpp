@@ -176,7 +176,6 @@ void Communication::_openServant() noexcept
 			m_tcpSocket = m_tcpServer->nextPendingConnection();
 			connect(m_tcpSocket, &QTcpSocket::disconnected, [=]()
 				{
-					m_tcpSocket->deleteLater();
 					//通信断开连接
 					m_connectFlag = false;
 					emit disconnected();
@@ -193,7 +192,7 @@ void Communication::_openServant() noexcept
 void Communication::_openMaster() noexcept
 {
 	//建立主站通信
-	if (m_tcpSocket != nullptr)
+	if (m_tcpSocket)
 	{
 		m_tcpSocket->close();
 		delete m_tcpSocket;
@@ -215,7 +214,6 @@ void Communication::_openMaster() noexcept
 			connect(m_tcpSocket, &QTcpSocket::disconnected, [=]()
 				{
 					//通信断开连接
-					m_tcpSocket->deleteLater();
 					m_connectFlag = false;
 					emit disconnected();
 				});
@@ -231,7 +229,6 @@ void Communication::_openMaster() noexcept
 	);
 	//设置主站标签
 	m_masterFlag = true;
-
 	//连接辅站
 	m_tcpSocket->connectToHost(QHostAddress(m_servantIP), m_port);
 	m_tcpSocket->waitForConnected();

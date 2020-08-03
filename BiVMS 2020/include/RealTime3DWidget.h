@@ -61,6 +61,7 @@ private:
 	void _startCompute() noexcept;
 	void _finishCompute() noexcept;
 	void _sendServantImg() noexcept;
+	void _sendServantData() noexcept;
 
 private slots:
 	void _slotAddPOI() noexcept;

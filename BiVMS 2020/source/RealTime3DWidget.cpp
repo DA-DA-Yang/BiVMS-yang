@@ -153,14 +153,18 @@ void RealTime3DWidget::_updateShow() noexcept
 		{
 			if (m_communicationImage->isMaster())
 			{
+				//主站接收辅站图像并显示
 				_updateServantShow();
+				
 			}
 			else
 			{
+				//辅站发送图像
 				_sendServantImg();
+				//辅站发送测点数据
+				_sendServantData();
 			}
-		}
-			
+		}	
 	}
 		
 	
@@ -185,6 +189,8 @@ void RealTime3DWidget::_updateServantShow() noexcept
 			}
 			m_FPSServantShow++;
 		}
+		auto byteArray = m_communicationData->getData();
+		m_showServant->showTime((QString)byteArray);
 	}
 	
 }
@@ -206,6 +212,7 @@ void RealTime3DWidget::_finishCompute() noexcept
 	m_drawingDock->close();
 }
 
+//辅站发送图像
 void RealTime3DWidget::_sendServantImg() noexcept
 {
 	if (m_masterImg.bits())
@@ -214,6 +221,21 @@ void RealTime3DWidget::_sendServantImg() noexcept
 		ba.resize(m_masterImg.byteCount());
 		memcpy(ba.data(), m_masterImg.bits(), m_masterImg.byteCount());
 		m_communicationImage->sendData(ba);
+	}
+}
+
+//辅站发送测点数据
+void RealTime3DWidget::_sendServantData() noexcept
+{
+	/**************Demo**************/
+	//获取当前时间
+	QDateTime current_date_time = QDateTime::currentDateTime();
+	QString current_date = current_date_time.toString("yyyy.MM.dd hh:mm:ss.zzz");
+	QByteArray ba;
+	ba.append(current_date);
+	if (m_communicationData)
+	{
+		m_communicationData->sendData(ba);
 	}
 }
 

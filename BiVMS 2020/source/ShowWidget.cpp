@@ -40,6 +40,12 @@ void ShowWidget::showFPS(int FPS) noexcept
 	ui.label_FPS->setText(text);
 }
 
+void ShowWidget::showTime(QString strTime) noexcept
+{
+	QString text = "Time: " + strTime;
+	ui.label_FPS->setText(text);
+}
+
 void ShowWidget::_send_Selected(int index) noexcept
 {
 	//发送测点被选择信号
